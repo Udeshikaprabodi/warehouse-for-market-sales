@@ -44,3 +44,22 @@ def upload_to_s3(file_name, bucket, object_name=None):
     except Exception as e:
         print(f"Error uploading {file_name}: {e}")
 
+# Execute SQL commands
+def execute_redshift_query(query):
+    try:
+        conn = psycopg2.connect(
+            host=REDSHIFT_ENDPOINT.split(":")[0],
+            dbname=REDSHIFT_DB,
+            user=REDSHIFT_USER,
+            password=REDSHIFT_PASSWORD,
+            port=REDSHIFT_PORT,
+        )
+        cur = conn.cursor()
+        cur.execute(query)
+        conn.commit()
+        print("Query executed successfully.")
+        cur.close()
+        conn.close()
+    except Exception as e:
+        print(f"Error executing query: {e}")     
+
