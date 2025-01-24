@@ -12,7 +12,7 @@ A project demonstrating the design and implementation of a data warehouse for co
 - **Amazon Redshift**: Cloud data warehousing.
 - **Python**: For data preprocessing and loading.
 - **SQL**: For querying and schema creation.
-- **AWS S3**: For staging CSV data before loading into Redshift.
+- **AWS S3**: For staging CSV data before loading into Redshift
 
 ## Dataset
 The dataset represents historical sales data from three supermarket branches over three months. It includes fields like Invoice ID, Branch, City, Customer Type, Gender, Product Line, Unit Price, Quantity, Tax, Total, Date, Time, Payment, and Rating.
