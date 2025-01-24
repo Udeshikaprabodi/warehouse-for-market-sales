@@ -67,3 +67,13 @@ def execute_redshift_query(query):
 if __name__ == "__main__":
     # Step 1: Upload data to S3
     upload_to_s3("data/supermarket_sales.csv", S3_BUCKET, "supermarket_sales.csv")
+    # Step 2: Run SQL scripts
+    with open("sql/create_tables.sql", "r") as f:
+        create_table_queries = f.read()
+    execute_redshift_query(create_table_queries)
+    
+    with open("sql/load_data.sql", "r") as f:
+        load_data_queries = f.read().replace(
+            "<AWS_ACCESS_KEY>", AWS_ACCESS_KEY
+        ).replace("<AWS_SECRET_ACCESS_KEY>", AWS_SECRET_KEY)
+    execute_redshift_query(load_data_queries)
