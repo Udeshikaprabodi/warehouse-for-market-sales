@@ -18,3 +18,8 @@ CREDENTIALS 'aws_access_key_id={AWS_ACCESS_KEY};aws_secret_access_key={AWS_SECRE
 CSV IGNOREHEADER 1;
 """
 
+COPY_DIM_DATE = f"""
+COPY dim_date FROM 's3://{S3_BUCKET}/dim_date.csv'
+CREDENTIALS 'aws_access_key_id={AWS_ACCESS_KEY};aws_secret_access_key={AWS_SECRET_KEY}'
+CSV IGNOREHEADER 1;
+"""
