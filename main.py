@@ -63,3 +63,7 @@ def execute_redshift_query(query):
     except Exception as e:
         print(f"Error executing query: {e}")     
 
+# Main Workflow
+if __name__ == "__main__":
+    # Step 1: Upload data to S3
+    upload_to_s3("data/supermarket_sales.csv", S3_BUCKET, "supermarket_sales.csv")
