@@ -35,3 +35,11 @@ COPY fact_sales FROM 's3://{S3_BUCKET}/fact_sales.csv'
 CREDENTIALS 'aws_access_key_id={AWS_ACCESS_KEY};aws_secret_access_key={AWS_SECRET_KEY}'
 CSV IGNOREHEADER 1;
 """
+
+
+
+# Print the queries to verify
+print(COPY_DIM_BRANCH)
+print(COPY_DIM_DATE)
+print(COPY_DIM_PRODUCT)
+print(COPY_FACT_SALES)
